@@ -62,22 +62,28 @@ public class ReclamosBean implements ReclamosBeanRemote {
 		} catch (PersistenceException e) {
 			throw new ServiciosException("No se pudo dar de baja el reclamo");
 		}
-
 	}
 
 	@Override
 	public List<Reclamo> obtenerTodos() {
 		// TODO Auto-generated method stub
-		TypedQuery<Reclamo> query = em.createNamedQuery("Reclamo.obtenerTodos", Reclamo.class);
+		TypedQuery<Reclamo> query = em.createQuery("SELECT r FROM Reclamo r", Reclamo.class);
 		return query.getResultList();
 	}
 
 	@Override
-	public List<Reclamo> obtenerTodos(String filtro) {
+	public List<Reclamo> obtenerPorEstado(String estado) {
 		// TODO Auto-generated method stub
-		TypedQuery<Reclamo> query = em.createQuery("SELECT r FROM Reclamo r WHERE r.nombre LIKE :nombre", Reclamo.class)
-				.setParameter("nombre", filtro);
+		TypedQuery<Reclamo> query = em.createQuery("SELECT r FROM Reclamo r WHERE r.estado LIKE :estado", Reclamo.class)
+				.setParameter("estado", estado);
 		return query.getResultList();
+	}
+
+	@Override
+	public Reclamo obtenerReclamo(long id_reclamo) {
+		TypedQuery<Reclamo> query = em.createQuery("SELECT r FROM Reclamo r WHERE r.id_reclamo LIKE :id_reclamo", Reclamo.class)
+				.setParameter("id_reclamo", id_reclamo);
+		return query.getResultList().get(0);
 	}
 
 }

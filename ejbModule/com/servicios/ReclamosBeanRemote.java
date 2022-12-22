@@ -18,6 +18,8 @@ public interface ReclamosBeanRemote {
 
 	List<Reclamo> obtenerTodos();
 
-	List<Reclamo> obtenerTodos(String filtro);
+	List<Reclamo> obtenerPorEstado(String estado);
+
+	Reclamo obtenerReclamo(long id);
 
 }

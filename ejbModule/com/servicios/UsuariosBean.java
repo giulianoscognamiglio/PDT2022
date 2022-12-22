@@ -111,5 +111,16 @@ public class UsuariosBean implements UsuariosBeanRemote {
 		}
 	}
 
+	@Override
+	public Usuario obtenerPorId(long id_usuario) throws ServiciosException {
+		try {
+			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.id_usuario LIKE :id_usuario", Usuario.class)
+					.setParameter("id_usuario", id_usuario);
+			return query.getSingleResult();
+			}catch(PersistenceException e) {
+				return null;
+			}
+	}
+
 
 }

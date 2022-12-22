@@ -20,24 +20,36 @@ public class Reclamo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_RECLAMO")
 	private long id_reclamo;
 
-	@Column(nullable = false, length = 50)
+	@Column(nullable = false, length = 200)
 	private String detalle;
 
 	@Column(nullable = false, length = 50)
 	private Date fecha;
 
-	@ManyToOne
-	private Estudiante estudiante;
+	@Column(nullable = false, length = 50)
+	private long estudiante_id_usuario;
+
+	@Column(nullable = false, length = 20)
+	private String estado;
+	
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
 
 	public Reclamo() {
 		super();
 	}
 
-	public Reclamo(String detalle, Date fecha, Estudiante estudiante) {
+	public Reclamo(String detalle, Date fecha, long idEstudiante, String estado) {
 		super();
 		this.detalle = detalle;
 		this.fecha = fecha;
-		this.estudiante = estudiante;
+		this.estudiante_id_usuario = idEstudiante;
+		this.estado = estado;
 	}
 
 	public long getId_reclamo() {
@@ -64,18 +76,18 @@ public class Reclamo implements Serializable {
 		this.fecha = fecha;
 	}
 
-	public Estudiante getEstudiante() {
-		return estudiante;
+	public long getEstudiante() {
+		return estudiante_id_usuario;
 	}
 
-	public void setEstudiante(Estudiante estudiante) {
-		this.estudiante = estudiante;
+	public void setEstudiante(long idEstudiante) {
+		this.estudiante_id_usuario = idEstudiante;
 	}
 
 	@Override
 	public String toString() {
 		return "Reclamo [id_reclamo=" + id_reclamo + ", detalle=" + detalle + ", fecha=" + fecha + ", estudiante="
-				+ estudiante + "]";
+				+ estudiante_id_usuario + "]";
 	}
 
 }

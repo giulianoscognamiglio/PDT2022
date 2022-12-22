@@ -20,6 +20,8 @@ public interface UsuariosBeanRemote {
 
 	public Usuario obtenerPorDocumento(String cedula) throws ServiciosException;
 	
+	public Usuario obtenerPorId(long id_usuario) throws ServiciosException;
+	
 	Usuario verificarUsuario(String usuario, String contrasena) throws ServiciosException;
 
 	public boolean existeDocumento(String documento);
