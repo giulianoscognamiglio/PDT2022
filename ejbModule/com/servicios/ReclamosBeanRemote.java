@@ -19,6 +19,9 @@ public interface ReclamosBeanRemote {
 	List<Reclamo> obtenerTodos();
 
 	List<Reclamo> obtenerPorEstado(String estado);
+	
+	List<Reclamo> obtenerPorEstudiante(long estudiante_id_reclamo);
+
 
 	Reclamo obtenerReclamo(long id);
 

@@ -86,4 +86,11 @@ public class ReclamosBean implements ReclamosBeanRemote {
 		return query.getResultList().get(0);
 	}
 
+	@Override
+	public List<Reclamo> obtenerPorEstudiante(long estudiante_id_usuario) {
+		TypedQuery<Reclamo> query = em.createQuery("SELECT r FROM Reclamo r WHERE r.estudiante_id_usuario LIKE :estudiante_id_usuario", Reclamo.class)
+				.setParameter("estudiante_id_usuario", estudiante_id_usuario);
+		return query.getResultList();
+	}
+
 }
