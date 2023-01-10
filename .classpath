@@ -12,8 +12,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/lmd62/wildfly-26.1.1.Final/bin/client/jboss-client.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lmd62/wildfly-26.1.1.Final/modules/system/layers/base/org/hibernate/main/hibernate-core-5.3.24.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lmd62/Desktop/UTEC/Primer Semestre/thrash/eclipse-jee-2022-03-R-win32-x86_64/eclipse/plugins/javax.persistence_2.2.1.v201807122140.jar"/>
+	<classpathentry kind="lib" path="C:/Users/feder/eclipse-workspace/PDT2023/PDT2022/dependencies/jboss-client.jar"/>
+	<classpathentry kind="lib" path="C:/Users/feder/eclipse-workspace/PDT2023/PDT2022/dependencies/hibernate-core-5.3.24.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/feder/eclipse-workspace/PDT2023/PDT2022/dependencies/javax.persistence.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
