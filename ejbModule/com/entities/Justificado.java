@@ -25,15 +25,13 @@ public class Justificado implements Serializable {
 
 	@Column(nullable = false, length = 50)
 	private Date fecha;
-	
+
 	@Column(nullable = false, length = 50)
 	private long estudiante_id_usuario;
 
-
 	@Column(nullable = false, length = 20)
 	private String estado;
-	
-	
+
 	public Justificado() {
 		super();
 	}
@@ -79,6 +77,7 @@ public class Justificado implements Serializable {
 	public void setEstudiante(long idEstudiante) {
 		this.estudiante_id_usuario = idEstudiante;
 	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -96,7 +95,5 @@ public class Justificado implements Serializable {
 		return "Justificado [id_justificado=" + id_justificado + ", detalle=" + detalle + ", fecha=" + fecha
 				+ ", estudiante_id_usuario=" + estudiante_id_usuario + ", estado=" + estado + "]";
 	}
-
-
 
 }
