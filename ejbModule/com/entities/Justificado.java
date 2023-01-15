@@ -41,6 +41,7 @@ public class Justificado implements Serializable {
 		this.detalle = detalle;
 		this.fecha = fecha;
 		this.estudiante_id_usuario = idEstudiante;
+		this.estado = estado;		
 	}
 
 //	@ManyToOne

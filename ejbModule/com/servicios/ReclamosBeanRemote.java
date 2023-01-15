@@ -22,7 +22,6 @@ public interface ReclamosBeanRemote {
 	
 	List<Reclamo> obtenerPorEstudiante(long estudiante_id_reclamo);
 
-
 	Reclamo obtenerReclamo(long id);
 
 }
