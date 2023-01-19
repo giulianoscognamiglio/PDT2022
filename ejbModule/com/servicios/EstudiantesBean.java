@@ -67,11 +67,10 @@ public class EstudiantesBean implements EstudiantesBeanRemote {// Debe heredar d
 
 	@Override
 	public List<Estudiante> obtenerTodos() {
-		// TODO Auto-generated method stub
-		TypedQuery<Estudiante> query = em.createNamedQuery("Estudiante.obtenerTodos", Estudiante.class);
+		TypedQuery<Estudiante> query = em.createQuery("SELECT r FROM Estudiante r", Estudiante.class);
 		return query.getResultList();
 	}
-
+	
 	// generar otro método que busque por id y otro por ci
 	@Override
 	public List<Estudiante> obtenerTodos(String filtro) {

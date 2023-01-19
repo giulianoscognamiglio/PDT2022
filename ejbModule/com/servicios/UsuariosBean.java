@@ -121,6 +121,18 @@ public class UsuariosBean implements UsuariosBeanRemote {
 				return null;
 			}
 	}
+	
+	@Override
+	public
+	List<Usuario> obtenerEstudiantes() throws ServiciosException{
+		try {
+			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.rol_id == 1", Usuario.class);
+					
+			return query.getResultList();
+			}catch(PersistenceException e) {
+				return null;
+			}
+	}
 
 
 }
