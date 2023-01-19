@@ -26,19 +26,26 @@ public class Justificado implements Serializable {
 	@Column(nullable = false, length = 50)
 	private Date fecha;
 
+	@Column(nullable = false, length = 50)
+	private long estudiante_id_usuario;
+
+	@Column(nullable = false, length = 20)
+	private String estado;
+
 	public Justificado() {
 		super();
 	}
 
-	public Justificado(String detalle, Date fecha, Estudiante estudiante) {
+	public Justificado(String detalle, Date fecha, long idEstudiante, String estado) {
 		super();
 		this.detalle = detalle;
 		this.fecha = fecha;
-		this.estudiante = estudiante;
+		this.estudiante_id_usuario = idEstudiante;
+		this.estado = estado;		
 	}
 
-	@ManyToOne
-	private Estudiante estudiante;
+//	@ManyToOne
+//	private Estudiante estudiante;
 
 	public long getId_justificado() {
 		return id_justificado;
@@ -64,22 +71,30 @@ public class Justificado implements Serializable {
 		this.fecha = fecha;
 	}
 
-	public Estudiante getEstudiante() {
-		return estudiante;
+	public long getEstudiante() {
+		return estudiante_id_usuario;
 	}
 
-	public void setEstudiante(Estudiante estudiante) {
-		this.estudiante = estudiante;
+	public void setEstudiante(long idEstudiante) {
+		this.estudiante_id_usuario = idEstudiante;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
 	@Override
 	public String toString() {
 		return "Justificado [id_justificado=" + id_justificado + ", detalle=" + detalle + ", fecha=" + fecha
-				+ ", estudiante=" + estudiante + "]";
+				+ ", estudiante_id_usuario=" + estudiante_id_usuario + ", estado=" + estado + "]";
 	}
 
 }

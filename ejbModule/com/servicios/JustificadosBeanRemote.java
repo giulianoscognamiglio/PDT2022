@@ -9,6 +9,7 @@ import com.exceptions.ServiciosException;
 
 @Remote
 public interface JustificadosBeanRemote {
+	
 	void crear(Justificado justificado) throws ServiciosException;
 
 	void actualizar(Justificado justificado) throws ServiciosException;
@@ -17,6 +18,10 @@ public interface JustificadosBeanRemote {
 
 	List<Justificado> obtenerTodos();
 
-	List<Justificado> obtenerTodos(String filtro);
+	List<Justificado> obtenerPorEstado(String estado);
+	
+	List<Justificado> obtenerPorEstudiante(long estudiante_id_justificado);
+
+	Justificado obtenerJustificado(long id);
 
 }

@@ -32,14 +32,6 @@ public class Reclamo implements Serializable {
 	@Column(nullable = false, length = 20)
 	private String estado;
 	
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
 	public Reclamo() {
 		super();
 	}
@@ -83,11 +75,20 @@ public class Reclamo implements Serializable {
 	public void setEstudiante(long idEstudiante) {
 		this.estudiante_id_usuario = idEstudiante;
 	}
+	
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
 
 	@Override
 	public String toString() {
-		return "Reclamo [id_reclamo=" + id_reclamo + ", detalle=" + detalle + ", fecha=" + fecha + ", estudiante="
-				+ estudiante_id_usuario + "]";
+		return "Reclamo [id_reclamo=" + id_reclamo + ", detalle=" + detalle + ", fecha=" + fecha
+				+ ", estudiante_id_usuario=" + estudiante_id_usuario + ", estado=" + estado + "]";
 	}
+
 
 }
