@@ -26,6 +26,6 @@ public interface UsuariosBeanRemote {
 
 	public boolean existeDocumento(String documento);
 
-	List<Usuario> obtenerEstudiantes() throws ServiciosException;
+	List<Usuario> obtenerPorRol(Long rolId) throws ServiciosException;
 	
 }

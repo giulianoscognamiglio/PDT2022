@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
+import com.entities.Rol;
 import com.entities.Usuario;
 import com.exceptions.ServiciosException;
 
@@ -124,9 +125,12 @@ public class UsuariosBean implements UsuariosBeanRemote {
 	
 	@Override
 	public
-	List<Usuario> obtenerEstudiantes() throws ServiciosException{
+	List<Usuario> obtenerPorRol(Long rolId) throws ServiciosException{
 		try {
-			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.rol_id == 1", Usuario.class);
+		
+			Rol rol = em.find(Rol.class, rolId);
+			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.rol LIKE :rol", Usuario.class)
+					.setParameter("rol", rol);
 					
 			return query.getResultList();
 			}catch(PersistenceException e) {
