@@ -32,21 +32,129 @@ public class Reclamo implements Serializable {
 	@Column(nullable = false, length = 20)
 	private String estado;
 	
+	@Column(nullable = false, length = 10)
+	private String tipo;
+	
+	//opcionales
+	//solo vme
+	@Column(nullable = true, length = 100)
+	private String nombreEventoVME;
+	
+	//ape u optativa
+	@Column(nullable = true, length = 100)
+	private String nombreActividadAPE;
+	
+	//vme, ape u optativa-----------------------------
+	@Column(nullable = true, length = 10)
+	private int creditosReclamados;
+	
+	@Column(nullable = true, length = 50)
+	private Long docente_id;
+	
+	@Column(nullable = true, length = 50)
+	private Date fechaInicioActividad;
+	
+	@Column(nullable = true, length = 10)
+	private int semestre;
+	//------------------------------------------------
+	
+	public long getEstudiante_id_usuario() {
+		return estudiante_id_usuario;
+	}
+
+	public void setEstudiante_id_usuario(long estudiante_id_usuario) {
+		this.estudiante_id_usuario = estudiante_id_usuario;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getNombreEventoVME() {
+		return nombreEventoVME;
+	}
+
+	public void setNombreEventoVME(String nombreEventoVME) {
+		this.nombreEventoVME = nombreEventoVME;
+	}
+
+	public String getNombreActividadAPE() {
+		return nombreActividadAPE;
+	}
+
+	public void setNombreActividadAPE(String nombreActividadAPE) {
+		this.nombreActividadAPE = nombreActividadAPE;
+	}
+
+	public int getCreditosReclamados() {
+		return creditosReclamados;
+	}
+
+	public void setCreditosReclamados(int creditosReclamados) {
+		this.creditosReclamados = creditosReclamados;
+	}
+
+	public Long getDocente_id() {
+		return docente_id;
+	}
+
+	public void setDocente_id(Long docente_id) {
+		this.docente_id = docente_id;
+	}
+
+	public Date getFechaInicioActividad() {
+		return fechaInicioActividad;
+	}
+
+	public void setFechaInicioActividad(Date fechaInicioActividad) {
+		this.fechaInicioActividad = fechaInicioActividad;
+	}
+
+	public int getSemestre() {
+		return semestre;
+	}
+
+	public void setSemestre(int semestre) {
+		this.semestre = semestre;
+	}
+
 	public Reclamo() {
 		super();
 	}
 
-	public Reclamo(String detalle, Date fecha, long idEstudiante, String estado) {
-		super();
-		this.detalle = detalle;
-		this.fecha = fecha;
-		this.estudiante_id_usuario = idEstudiante;
-		this.estado = estado;
-	}
+//	public Reclamo(String detalle, Date fecha, long idEstudiante, String estado) {
+//		super();
+//		this.detalle = detalle;
+//		this.fecha = fecha;
+//		this.estudiante_id_usuario = idEstudiante;
+//		this.estado = estado;
+//	}
 
 	public long getId_reclamo() {
 		return id_reclamo;
 	}
+
+	public Reclamo(long id_reclamo, String detalle, Date fecha, long estudiante_id_usuario, String estado, String tipo,
+		String nombreEventoVME, String nombreActividadAPE, int creditosReclamados, Long docente_id,
+		Date fechaInicioActividad, int semestre) {
+	super();
+	this.id_reclamo = id_reclamo;
+	this.detalle = detalle;
+	this.fecha = fecha;
+	this.estudiante_id_usuario = estudiante_id_usuario;
+	this.estado = estado;
+	this.tipo = tipo;
+	this.nombreEventoVME = nombreEventoVME;
+	this.nombreActividadAPE = nombreActividadAPE;
+	this.creditosReclamados = creditosReclamados;
+	this.docente_id = docente_id;
+	this.fechaInicioActividad = fechaInicioActividad;
+	this.semestre = semestre;
+}
 
 	public void setId_reclamo(long id_reclamo) {
 		this.id_reclamo = id_reclamo;
