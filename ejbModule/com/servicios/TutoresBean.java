@@ -69,7 +69,7 @@ public class TutoresBean implements TutoresBeanRemote {
 	@Override
 	public List<Tutor> obtenerTodos() {
 		// TODO Auto-generated method stub
-		TypedQuery<Tutor> query = em.createNamedQuery("Tutor.obtenerTodos", Tutor.class);
+		TypedQuery<Tutor> query = em.createQuery("SELECT t FROM Tutor t", Tutor.class);
 		return query.getResultList();
 	}
 

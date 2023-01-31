@@ -18,7 +18,7 @@ public class Reclamo implements Serializable {
 	@Id
 	@SequenceGenerator(name = "SEQ_RECLAMO", initialValue = 1, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_RECLAMO")
-	private long id_reclamo;
+	private Long id_reclamo;
 
 	@Column(nullable = false, length = 200)
 	private String detalle;
@@ -27,7 +27,7 @@ public class Reclamo implements Serializable {
 	private Date fecha;
 
 	@Column(nullable = false, length = 50)
-	private long estudiante_id_usuario;
+	private Long estudiante_id_usuario;
 
 	@Column(nullable = false, length = 20)
 	private String estado;
@@ -46,7 +46,7 @@ public class Reclamo implements Serializable {
 	
 	//vme, ape u optativa-----------------------------
 	@Column(nullable = true, length = 10)
-	private int creditosReclamados;
+	private Integer creditosReclamados;
 	
 	@Column(nullable = true, length = 50)
 	private Long docente_id;
@@ -55,14 +55,14 @@ public class Reclamo implements Serializable {
 	private Date fechaInicioActividad;
 	
 	@Column(nullable = true, length = 10)
-	private int semestre;
+	private Integer semestre;
 	//------------------------------------------------
 	
 	public long getEstudiante_id_usuario() {
 		return estudiante_id_usuario;
 	}
 
-	public void setEstudiante_id_usuario(long estudiante_id_usuario) {
+	public void setEstudiante_id_usuario(Long estudiante_id_usuario) {
 		this.estudiante_id_usuario = estudiante_id_usuario;
 	}
 
@@ -94,7 +94,7 @@ public class Reclamo implements Serializable {
 		return creditosReclamados;
 	}
 
-	public void setCreditosReclamados(int creditosReclamados) {
+	public void setCreditosReclamados(Integer creditosReclamados) {
 		this.creditosReclamados = creditosReclamados;
 	}
 
@@ -118,7 +118,7 @@ public class Reclamo implements Serializable {
 		return semestre;
 	}
 
-	public void setSemestre(int semestre) {
+	public void setSemestre(Integer semestre) {
 		this.semestre = semestre;
 	}
 
@@ -156,7 +156,7 @@ public class Reclamo implements Serializable {
 	this.semestre = semestre;
 }
 
-	public void setId_reclamo(long id_reclamo) {
+	public void setId_reclamo(Long id_reclamo) {
 		this.id_reclamo = id_reclamo;
 	}
 
@@ -180,7 +180,7 @@ public class Reclamo implements Serializable {
 		return estudiante_id_usuario;
 	}
 
-	public void setEstudiante(long idEstudiante) {
+	public void setEstudiante(Long idEstudiante) {
 		this.estudiante_id_usuario = idEstudiante;
 	}
 	
