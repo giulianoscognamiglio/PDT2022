@@ -75,23 +75,25 @@ public class UsuariosBean implements UsuariosBeanRemote {
 	@Override
 	public Usuario obtenerPorDocumento(String cedula) throws ServiciosException {
 		try {
-		TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.cedula LIKE :cedula", Usuario.class)
-				.setParameter("cedula", cedula);
-		return query.getSingleResult();
-		}catch(PersistenceException e) {
+			TypedQuery<Usuario> query = em
+					.createQuery("SELECT u FROM Usuario u WHERE u.cedula LIKE :cedula", Usuario.class)
+					.setParameter("cedula", cedula);
+			return query.getSingleResult();
+		} catch (PersistenceException e) {
 			return null;
 		}
-		
+
 	}
-	
+
 	@Override
-	public Usuario verificarUsuario (String usuario, String contrasena) throws ServiciosException {
+	public Usuario verificarUsuario(String usuario, String contrasena) throws ServiciosException {
 		try {
-			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.usuario = :usuario AND u.contrasena=:contrasena",Usuario.class)
-					.setParameter("usuario", usuario)
-					.setParameter("contrasena", contrasena);
+			TypedQuery<Usuario> query = em
+					.createQuery("SELECT u FROM Usuario u WHERE u.usuario = :usuario AND u.contrasena=:contrasena",
+							Usuario.class)
+					.setParameter("usuario", usuario).setParameter("contrasena", contrasena);
 			return query.getSingleResult();
-		}catch(PersistenceException e) {
+		} catch (PersistenceException e) {
 			return null;
 		}
 	}
@@ -99,13 +101,14 @@ public class UsuariosBean implements UsuariosBeanRemote {
 	@Override
 	public boolean existeDocumento(String cedula) {
 		try {
-			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.cedula = :cedula",Usuario.class)
+			TypedQuery<Usuario> query = em
+					.createQuery("SELECT u FROM Usuario u WHERE u.cedula = :cedula", Usuario.class)
 					.setParameter("cedula", cedula);
-			if(query != null) {
+			if (query != null) {
 				return true;
 			}
 			return false;
-		}catch(PersistenceException e) {
+		} catch (PersistenceException e) {
 			e.printStackTrace();
 			return false;
 		}
@@ -114,13 +117,25 @@ public class UsuariosBean implements UsuariosBeanRemote {
 	@Override
 	public Usuario obtenerPorId(long id_usuario) throws ServiciosException {
 		try {
-			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.id_usuario LIKE :id_usuario", Usuario.class)
+			TypedQuery<Usuario> query = em
+					.createQuery("SELECT u FROM Usuario u WHERE u.id_usuario LIKE :id_usuario", Usuario.class)
 					.setParameter("id_usuario", id_usuario);
 			return query.getSingleResult();
-			}catch(PersistenceException e) {
-				return null;
-			}
+		} catch (PersistenceException e) {
+			return null;
+		}
 	}
 
+	@Override
+	public Usuario obtenerPorMailInstitucional(String mailInstitucional) throws ServiciosException {
+		try {
+			TypedQuery<Usuario> query = em
+					.createQuery("SELECT u FROM Usuario u WHERE u.mailInstitucional LIKE :mailInstitucional", Usuario.class)
+					.setParameter("mailInstitucional", mailInstitucional);
+			return query.getSingleResult();
+		} catch (PersistenceException e) {
+			return null;
+		}
+	}
 
 }
