@@ -27,5 +27,7 @@ public interface UsuariosBeanRemote {
 	Usuario verificarUsuario(String usuario, String contrasena) throws ServiciosException;
 
 	public boolean existeDocumento(String documento);
+
+	List<Usuario> obtenerPorRol(Long rolId) throws ServiciosException;
 	
 }
