@@ -93,4 +93,22 @@ public class ReclamosBean implements ReclamosBeanRemote {
 		return query.getResultList();
 	}
 
+	@Override
+	public List<Reclamo> enviarQueryCustom(String query) {
+		TypedQuery<Reclamo> queryCustom = em.createQuery(query, Reclamo.class);
+		return queryCustom.getResultList();
+	}
+
+	@Override
+	public List<String> obtenerGeneraciones() {
+//		
+//		"SELECT DISTINCT\r\n"
+//				+ "    estudiantes.generacion\r\n"
+//				+ "FROM\r\n"
+//				+ "         reclamos\r\n"
+//				+ "    INNER JOIN estudiantes ON reclamos.estudiante_id_usuario = estudiantes.id_estudiante"
+		TypedQuery<String> queryCustom = em.createQuery("SELECT DISTINCT e.generacion FROM Reclamo r inner join r.estudiante_id_usuaro e", String.class);
+		return queryCustom.getResultList();
+	}
+
 }

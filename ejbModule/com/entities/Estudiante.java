@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Estudiante extends Usuario implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	//@Id
 	@SequenceGenerator(name = "SEQ_ESTUDIANTE", initialValue = 1, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ESTUDIANTE")
 	private long id_estudiante;
