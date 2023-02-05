@@ -86,5 +86,12 @@ public class ConvocatoriasAsistenciaBean implements ConvocatoriasAsistenciaBeanR
 				.setParameter("nombre", filtro);
 		return query.getResultList();
 	}
+	
+	@Override
+	public List<ConvocatoriaAsistencia> obtenerPorEstudiante(long estudiante_id_usuario) {
+		TypedQuery<ConvocatoriaAsistencia> query = em.createQuery("SELECT c FROM ConvocatoriaAsistencia c WHERE c.estudiante_id_usuario LIKE :estudiante_id_usuario", ConvocatoriaAsistencia.class)
+				.setParameter("estudiante_id_usuario", estudiante_id_usuario);
+		return query.getResultList();
+	}
 
 }
