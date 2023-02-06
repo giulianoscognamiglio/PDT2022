@@ -17,5 +17,5 @@ public interface EventosBeanRemote {
 
 	List<Evento> obtenerTodos();
 
-	List<Evento> obtenerTodos(String filtro);
-}
+	Evento obtenerPorId(Long id_evento);
+	}

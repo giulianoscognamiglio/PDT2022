@@ -88,9 +88,9 @@ public class ConvocatoriasAsistenciaBean implements ConvocatoriasAsistenciaBeanR
 	}
 	
 	@Override
-	public List<ConvocatoriaAsistencia> obtenerPorEstudiante(long estudiante_id_usuario) {
-		TypedQuery<ConvocatoriaAsistencia> query = em.createQuery("SELECT c FROM ConvocatoriaAsistencia c WHERE c.estudiante_id_usuario LIKE :estudiante_id_usuario", ConvocatoriaAsistencia.class)
-				.setParameter("estudiante_id_usuario", estudiante_id_usuario);
+	public List<ConvocatoriaAsistencia> obtenerPorEstudiante(Long id_estudiante) {
+		TypedQuery<ConvocatoriaAsistencia> query = em.createQuery("SELECT c FROM ConvocatoriaAsistencia c WHERE c.id_estudiante LIKE :id_estudiante", ConvocatoriaAsistencia.class)
+				.setParameter("id_estudiante", id_estudiante);
 		return query.getResultList();
 	}
 

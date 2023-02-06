@@ -20,6 +20,6 @@ public interface ConvocatoriasAsistenciaBeanRemote {
 
 	List<ConvocatoriaAsistencia> obtenerTodos(String filtro);
 	
-	List<ConvocatoriaAsistencia> obtenerPorEstudiante(long estudiante_id_usuario);
+	List<ConvocatoriaAsistencia> obtenerPorEstudiante(Long estudiante_id_usuario);
 
 }

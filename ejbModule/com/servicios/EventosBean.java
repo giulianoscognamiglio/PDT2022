@@ -72,13 +72,12 @@ public class EventosBean implements EventosBeanRemote {
 
 	}
 
-	// agregar opción por fecha
 	@Override
-	public List<Evento> obtenerTodos(String filtro) {
+	public Evento obtenerPorId(Long id_evento) {
 		// TODO Auto-generated method stub
-		TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e WHERE e.nombre LIKE :nombre", Evento.class)
-				.setParameter("nombre", filtro);
-		return query.getResultList();
+		TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e WHERE e.id_evento LIKE :id_evento", Evento.class)
+				.setParameter("id_evento", id_evento);
+		return query.getSingleResult();
 	}
 
 }

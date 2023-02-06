@@ -18,7 +18,7 @@ public class Justificado implements Serializable {
 	@Id
 	@SequenceGenerator(name = "SEQ_JUSTIFICADO", initialValue = 1, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_JUSTIFICADO")
-	private long id_justificado;
+	private Long id_justificado;
 
 	@Column(nullable = false, length = 50)
 	private String detalle;
@@ -27,16 +27,28 @@ public class Justificado implements Serializable {
 	private Date fecha;
 
 	@Column(nullable = false, length = 50)
-	private long estudiante_id_usuario;
+	private Long estudiante_id_usuario;
 
 	@Column(nullable = false, length = 20)
 	private String estado;
+
+	@Column(nullable = false)
+	private Long id_evento;
+	
+	
+	public Long getId_evento() {
+		return id_evento;
+	}
+
+	public void setId_evento(Long id_evento) {
+		this.id_evento = id_evento;
+	}
 
 	public Justificado() {
 		super();
 	}
 
-	public Justificado(String detalle, Date fecha, long idEstudiante, String estado) {
+	public Justificado(String detalle, Date fecha, Long idEstudiante, String estado) {
 		super();
 		this.detalle = detalle;
 		this.fecha = fecha;
@@ -71,11 +83,11 @@ public class Justificado implements Serializable {
 		this.fecha = fecha;
 	}
 
-	public long getEstudiante() {
+	public Long getEstudiante() {
 		return estudiante_id_usuario;
 	}
 
-	public void setEstudiante(long idEstudiante) {
+	public void setEstudiante(Long idEstudiante) {
 		this.estudiante_id_usuario = idEstudiante;
 	}
 
