@@ -21,10 +21,18 @@ import javax.persistence.Table;
 public class Tutor extends Usuario implements Serializable {
 
 	
+//	@Entity
+//	@PrimaryKeyJoinColumn(referencedColumnName="id")
+//	public class Tutor extends Usuario implements Serializable {
+
+	public Tutor() {
+		super();
+	}
+	
 	private static final long serialVersionUID = 1L;	
 	
-	@SequenceGenerator(name = "SEQ_TUTOR", initialValue = 1, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_TUTOR")
+	@SequenceGenerator(name = "SEQ_TUTOR", initialValue = 1, allocationSize = 1)
 	private long id_tutor;
 
 	@Column
@@ -43,9 +51,7 @@ public class Tutor extends Usuario implements Serializable {
 		this.area = area;
 	}
 
-	public Tutor() {
-		super();
-	}
+
 
 	public long getId_tutor() {
 		return id_tutor;

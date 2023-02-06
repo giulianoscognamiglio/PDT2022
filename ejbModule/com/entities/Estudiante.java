@@ -9,6 +9,7 @@ import javax.persistence.*;
  * Entity implementation class for Entity: Estudiante
  *
  */
+
 @Entity
 @Table(name = "ESTUDIANTES")
 @PrimaryKeyJoinColumn(referencedColumnName="ID_USUARIO")
