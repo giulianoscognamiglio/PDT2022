@@ -20,6 +20,17 @@ public class Reclamo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_RECLAMO")
 	private Long id_reclamo;
 
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	@Column(nullable = false, length = 50)
+	private String titulo;
+	
 	@Column(nullable = false, length = 200)
 	private String detalle;
 
