@@ -24,13 +24,13 @@ public class ConvocatoriaAsistencia implements Serializable {
 	@Id
 	@SequenceGenerator(name = "SEQ_CONVOCATORIA", initialValue = 1, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CONVOCATORIA")
-	private long id_convocatoria_asistencia;
+	private Long id_convocatoria_asistencia;
 
-	@ManyToOne
-	private Estudiante estudiante;
+	@Column
+	private Long id_estudiante;
 
-	@ManyToOne
-	private Evento evento;
+	@Column
+	private Long id_evento;
 
 	@Column
 	private float calificacion;
@@ -39,9 +39,9 @@ public class ConvocatoriaAsistencia implements Serializable {
 	@Column
 	private float asistencia;
 
-	public ConvocatoriaAsistencia(Estudiante estudiante, Evento evento, float calificacion, float asistencia) {
-		this.estudiante = estudiante;
-		this.evento = evento;
+	public ConvocatoriaAsistencia(Long estudiante, Long evento, float calificacion, float asistencia) {
+		this.id_estudiante = estudiante;
+		this.id_evento = evento;
 		this.calificacion = calificacion;
 		this.asistencia = asistencia;
 	}
@@ -58,20 +58,25 @@ public class ConvocatoriaAsistencia implements Serializable {
 		this.id_convocatoria_asistencia = id_convocatoria_asistencia;
 	}
 
-	public Estudiante getEstudiante() {
-		return estudiante;
+
+	public Long getId_estudiante() {
+		return id_estudiante;
 	}
 
-	public void setEstudiante(Estudiante estudiante) {
-		this.estudiante = estudiante;
+	public void setId_estudiante(Long id_estudiante) {
+		this.id_estudiante = id_estudiante;
 	}
 
-	public Evento getEvento() {
-		return evento;
+	public Long getId_evento() {
+		return id_evento;
 	}
 
-	public void setEvento(Evento evento) {
-		this.evento = evento;
+	public void setId_evento(Long id_evento) {
+		this.id_evento = id_evento;
+	}
+
+	public void setId_convocatoria_asistencia(Long id_convocatoria_asistencia) {
+		this.id_convocatoria_asistencia = id_convocatoria_asistencia;
 	}
 
 	public float getCalificacion() {
@@ -92,9 +97,11 @@ public class ConvocatoriaAsistencia implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ConvocatoriaAsistencia [id_convocatoria_asistencia=" + id_convocatoria_asistencia + ", estudiante="
-				+ estudiante + ", evento=" + evento + ", calificacion=" + calificacion + ", asistencia=" + asistencia
-				+ "]";
+		return "ConvocatoriaAsistencia [id_convocatoria_asistencia=" + id_convocatoria_asistencia + ", id_estudiante="
+				+ id_estudiante + ", id_evento=" + id_evento + ", calificacion=" + calificacion + ", asistencia="
+				+ asistencia + "]";
 	}
+
+
 
 }

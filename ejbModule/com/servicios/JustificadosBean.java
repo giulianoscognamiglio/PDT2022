@@ -31,6 +31,8 @@ public class JustificadosBean implements JustificadosBeanRemote {
 	@Override
 	public void crear(Justificado justificado) throws ServiciosException {
 		// TODO Auto-generated method stub
+		
+		System.out.println(justificado);
 		try {
 			em.persist(justificado);
 			em.flush();

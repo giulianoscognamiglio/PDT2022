@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import com.entities.ConvocatoriaAsistencia;
+import com.entities.Justificado;
 import com.exceptions.ServiciosException;
 
 @Remote
@@ -18,4 +19,7 @@ public interface ConvocatoriasAsistenciaBeanRemote {
 	List<ConvocatoriaAsistencia> obtenerTodos();
 
 	List<ConvocatoriaAsistencia> obtenerTodos(String filtro);
+	
+	List<ConvocatoriaAsistencia> obtenerPorEstudiante(Long estudiante_id_usuario);
+
 }

@@ -81,4 +81,11 @@ public class TutoresBean implements TutoresBeanRemote {
 		return query.getResultList();
 	}
 
+	@Override
+	public Tutor obtenerPorUsuario(Long id_usuario) {
+		TypedQuery<Tutor> query = em.createQuery("SELECT t FROM Tutor t WHERE t.id_usuario LIKE :id_usuario", Tutor.class)
+				.setParameter("id_usuario", id_usuario);
+		return query.getSingleResult();
+	}
+
 }
