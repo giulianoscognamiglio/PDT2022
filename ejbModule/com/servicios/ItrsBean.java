@@ -71,13 +71,28 @@ public class ItrsBean implements ItrsBeanRemote {
 		TypedQuery<ITR> query = em.createQuery("SELECT i FROM ITR i", ITR.class);
 		return query.getResultList();
 	}
+	
+	@Override
+	public ITR obtenerPorId(long id) throws ServiciosException {
+		try {
+			TypedQuery<ITR> query = em
+					.createQuery("SELECT i FROM ITR i WHERE i.id LIKE :id", ITR.class)
+					.setParameter("id", id);
+			return query.getSingleResult();
+		} catch (PersistenceException e) {
+			return null;
+		}
+	}
 
 	@Override
 	public ITR obtenerPorNombre(String filtro) {
-		// TODO Auto-generated method stub
-		TypedQuery<ITR> query = em.createQuery("SELECT i FROM ITR i WHERE i.nombre = :nombre", ITR.class)
-				.setParameter("nombre", filtro);
-		return query.getSingleResult();
+		try {
+			TypedQuery<ITR> query = em.createQuery("SELECT i FROM ITR i WHERE i.nombre = :nombre", ITR.class)
+					.setParameter("nombre", filtro);
+			return query.getSingleResult();
+		} catch (PersistenceException e) {
+			return null;
+		}
 	}
 	
 }
