@@ -16,5 +16,6 @@ public interface AnalistasBeanRemote {
 	 List<Analista> obtenerTodos();
 //	 List<Analista> obtenerTodos(String filtro);
 	 public Usuario obtenerPorDocumento(String cedula);
+	 public Analista obtenerAnalistaDocumento(String cedula);
 
 }

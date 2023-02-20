@@ -80,5 +80,10 @@ public class AnalistasBean implements AnalistasBeanRemote {//debe heredar de Usu
 				.setParameter("cedula", cedula);
 		return query.getSingleResult();
 	}
+	
+	public Analista obtenerAnalistaDocumento(String cedula) {
+		TypedQuery<Analista> query = em.createQuery("SELECT a FROM Analista a WHERE a.cedula LIKE :cedula", Analista.class).setParameter("cedula", cedula);
+		return query.getSingleResult();
+	}
 
 }
