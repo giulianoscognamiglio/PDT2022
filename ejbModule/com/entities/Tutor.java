@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -35,10 +36,10 @@ public class Tutor extends Usuario implements Serializable {
 	@SequenceGenerator(name = "SEQ_TUTOR", initialValue = 1, allocationSize = 1)
 	private long id_tutor;
 
-	@Column
+	@ManyToOne
 	private Area area;
 
-	@Column
+	@ManyToOne
 	private TipoTutor tipo;
 
 	public Tutor(String cedula, String usuario, String contrasena, String apellido1, String apellido2,

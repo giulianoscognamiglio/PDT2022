@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import com.entities.ITR;
+import com.entities.Usuario;
 import com.exceptions.ServiciosException;
 
 @Remote
@@ -19,4 +20,6 @@ public interface ItrsBeanRemote {
 	List<ITR> obtenerTodos();
 
 	ITR obtenerPorNombre(String filtro);
+
+	ITR obtenerPorId(long id_usuario) throws ServiciosException;
 }

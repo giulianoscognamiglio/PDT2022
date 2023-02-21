@@ -24,15 +24,19 @@ public class ITR implements Serializable {
 
 	@ManyToOne
 	private Departamento departamento;
+	
+	@Column(nullable = false, length = 50)
+	private String activo;
 
 	public ITR() {
 		super();
 	}
 
-	public ITR(String nombre, Departamento departamento) {
+	public ITR(String nombre, Departamento departamento, String activo) {
 		super();
 		this.nombre = nombre;
 		this.departamento = departamento;
+		this.activo = activo;
 	}
 
 	public long getId() {
@@ -59,9 +63,17 @@ public class ITR implements Serializable {
 		this.departamento = departamento;
 	}
 
+	public String getActivo() {
+		return activo;
+	}
+
+	public void setActivo(String activo) {
+		this.activo = activo;
+	}
+
 	@Override
 	public String toString() {
-		return "ITR [id=" + id + ", nombre=" + nombre + "]";
+		return "ITR [id=" + id + ", nombre=" + nombre + ", departamento=" + departamento + ", activo=" + activo + "]";
 	}
 
 }
