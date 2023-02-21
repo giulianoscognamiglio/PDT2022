@@ -21,7 +21,14 @@
 		<table name="CONSTANCIAS" />
 	</entity>
 
-	
+	<entity access="FIELD" class="com.entities.AccionReclamo">
+		<table name="ACCIONES_RECLAMOS"/>
+	</entity>
+
+
+	<entity access="FIELD" class="com.entities.AccionJustificacion">
+		<table name="ACCIONES_JUSTIFICACION"/>
+	</entity>
 	
 	<entity class="com.entities.ConvocatoriaAsistencia"
 		access="FIELD">
