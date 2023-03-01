@@ -36,6 +36,25 @@ public class AccionReclamo implements Serializable {
 
 	@Column(nullable= false)
 	Long analista_id;
+	
+	@Column(nullable= false)
+	Long reclamo_id;
+
+	public Long getAnalista_id() {
+		return analista_id;
+	}
+
+	public void setAnalista_id(Long analista_id) {
+		this.analista_id = analista_id;
+	}
+
+	public Long getReclamo_id() {
+		return reclamo_id;
+	}
+
+	public void setReclamo_id(Long reclamo_id) {
+		this.reclamo_id = reclamo_id;
+	}
 
 	public Long getId() {
 		return id;

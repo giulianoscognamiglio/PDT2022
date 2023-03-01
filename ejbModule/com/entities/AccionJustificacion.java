@@ -37,6 +37,25 @@ public class AccionJustificacion implements Serializable {
 	@Column(nullable= false)
 	Long analista_id;
 
+	@Column(nullable= false)
+	Long justificado_id;
+	
+	public Long getAnalista_id() {
+		return analista_id;
+	}
+
+	public void setAnalista_id(Long analista_id) {
+		this.analista_id = analista_id;
+	}
+
+	public Long getJustificado_id() {
+		return justificado_id;
+	}
+
+	public void setJustificado_id(Long justificado_id) {
+		this.justificado_id = justificado_id;
+	}
+
 	public Long getId() {
 		return id;
 	}
