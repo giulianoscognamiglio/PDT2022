@@ -91,7 +91,6 @@ public class EstudiantesBean implements EstudiantesBeanRemote {// Debe heredar d
 	}
 	@Override
 	public Estudiante obtenerPorUsuario(Long id_usuario) {
-
 		TypedQuery<Estudiante> query = em.createQuery("Select e FROM Estudiante e WHERE e.id_usuario like: id_usuario", Estudiante.class)
 				.setParameter("id_usuario", id_usuario);
 		return query.getSingleResult();
